@@ -1,0 +1,37 @@
+@import "../theme.css";
+
+#workspaces {
+  margin-left: 15px;
+}
+
+#workspaces button {
+  background: transparent;
+}
+
+#workspaces button label {
+  margin: 0px 8px;
+}
+
+#workspaces button:nth-child(1) label {
+  color: @blue;
+}
+
+#workspaces button:nth-child(2) label {
+  color: @sapphire;
+}
+
+#workspaces button:nth-child(3) label {
+  color: @green;
+}
+
+#workspaces button:nth-child(4) label {
+  color: @yellow;
+}
+
+#workspaces button:nth-child(5) label {
+  color: @maroon;
+}
+
+#workspaces button:nth-child(6) label {
+  color: @mauve;
+}

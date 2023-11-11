@@ -1,0 +1,125 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": 1000,
+  "margin-top": 10,
+  "spacing": 20,
+  "modules-left": [
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "pulseaudio",
+    "group/hardware",
+    "battery",
+    "tray",
+    "clock"
+  ],
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature"
+    ]
+  },
+  "hyprland/workspaces": {
+    "sort-by-name": true,
+    "format": "{id}",
+    "show-special": true,
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M}"
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU",
+    "format-us": "US"
+  },
+  "mpris": {
+    "interval": 1,
+    "format": "{status_icon}",
+    "format-paused": "{status_icon}",
+    "tooltip-format": "{artist} - {title}",
+    "artist-len": 20,
+    "title-len": 20,
+    "status-icons": {
+      "default": "▶",
+      "paused": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5"
+  },
+  "temperature": {
+    "interval": 30,
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C",
+    "on-click": "kitty htop"
+  },
+  "battery": {
+    "interval": 30,
+    "full-at": 95,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}% ",
+    "format-charging": "󰂄 {capacity}% ",
+    "format-plugged": " {capacity}%",
+    "format-icons": [
+      "󱃍",
+      "󱃍",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰁹"
+    ],
+    "tooltip-format": "{capacity}%\n{timeTo}\n{power} W"
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 5
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c swaylock & disown",
+    "format": ""
+  },
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "sh -c wlogout --protocol layer-shell & disown",
+    "format": "⏻"
+  }
+}

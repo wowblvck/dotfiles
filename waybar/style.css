@@ -1,0 +1,61 @@
+@import url("./colors.css");
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 14px;
+  min-height: 0;
+}
+
+#mpris {
+  margin-left: 1rem;
+}
+
+#clock {
+  margin-right: 1rem;
+}
+
+#battery {
+  background: transparent;
+  color: @green;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.plugged {
+  color: @green;
+}
+
+#waybar {
+  background-color: @background-darker;
+  border-radius: 10px;
+  color: @cyan;
+}
+
+#workspaces button {
+  color: @foreground;
+  background-color: transparent;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  margin: 0.3rem 0;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#workspaces button.active {
+  color: @foreground;
+  background-color: @purple;
+}
+
+#workspaces button:hover {
+  color: @foreground;
+  background-color: @purple;
+}

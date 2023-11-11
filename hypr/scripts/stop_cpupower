@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Stop the cpupower.service using systemctl
+systemctl stop cpupower.service
+
+# Check the exit status of the previous command
+if [ $? -eq 0 ]; then
+    # If the exit status is 0 (success), send a notification
+    notify-send "CPUPower is stopped"
+else
+    # If the exit status is not 0 (error), send an error notification
+    notify-send "Failed to stop CPUPower"
+fi

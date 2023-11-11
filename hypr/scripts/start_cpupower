@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Stop the cpupower.service using systemctl
+systemctl start cpupower.service
+
+# Check the exit status of the previous command
+if [ $? -eq 0 ]; then
+    # If the exit status is 0 (success), send a notification
+    cpupower frequency-set -d 800000 -u 3200000 -g conservative
+    notify-send "CPUPower is started"
+else
+    # If the exit status is not 0 (error), send an error notification
+    notify-send "Failed to start CPUPower"
+fi
